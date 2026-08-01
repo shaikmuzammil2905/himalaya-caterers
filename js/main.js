@@ -1,11 +1,11 @@
 /* ==========================================================================
-   Himalaya Caterers - Interactive Core Scripts
+   Himalaya Caterers - Multi-Page Interactive Logic
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ------------------------------------------------------------------------
-     1. Header Scroll & Active Link Handling
+     1. Header Scroll & Multi-Page Active Link Highlighting
      ------------------------------------------------------------------------ */
   const header = document.querySelector('.header');
   const backToTopBtn = document.querySelector('.back-to-top');
@@ -23,6 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
   backToTopBtn?.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* Auto-highlight active navigation link based on window location */
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const allNavLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+
+  allNavLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPath || (currentPath === '' && linkHref === 'index.html')) {
+      link.classList.add('active');
+    } else if (!linkHref.startsWith('#')) {
+      link.classList.remove('active');
+    }
   });
 
   /* ------------------------------------------------------------------------
@@ -71,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
 
   revealElements.forEach(el => revealObserver.observe(el));
 
@@ -120,12 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
           animateCounters();
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.2 });
     statsObserver.observe(statsSection);
   }
 
   /* ------------------------------------------------------------------------
-     5. Services Carousel Navigation (Mobile & Desktop arrows)
+     5. Services Carousel Controls
      ------------------------------------------------------------------------ */
   const servicesGrid = document.querySelector('.services-grid');
   const prevBtn = document.querySelector('.carousel-prev');
@@ -142,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     6. Modal Popup System ("Get a Quote" / "Book Now" & "View Menu")
+     6. Modal Popup System
      ------------------------------------------------------------------------ */
   const quoteModal = document.getElementById('quoteModal');
   const menuModal = document.getElementById('menuModal');
@@ -208,9 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------------
-     7. Booking Form Submission & Toast Notification
+     7. Form Submission & Toast Notifications
      ------------------------------------------------------------------------ */
-  const bookingForm = document.getElementById('bookingForm');
+  const bookingForms = document.querySelectorAll('#bookingForm, #contactPageForm');
   const toast = document.getElementById('toastNotification');
 
   function showToast(message) {
@@ -222,20 +235,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4500);
   }
 
-  bookingForm?.addEventListener('submit', (e) => {
-    e.preventDefault();
+  bookingForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.querySelector('input[type="text"]')?.value || 'Guest';
+      const phone = form.querySelector('input[type="tel"]')?.value || '9666552435';
 
-    const name = document.getElementById('formName').value;
-    const phone = document.getElementById('formPhone').value;
-
-    if (!name || !phone) {
-      showToast('⚠️ Please enter your Name and Phone Number.');
-      return;
-    }
-
-    closeModal(quoteModal);
-    showToast(`🎉 Thank you, ${name}! Your booking inquiry has been received. We will contact you at ${phone} shortly!`);
-    bookingForm.reset();
+      closeModal(quoteModal);
+      showToast(`🎉 Thank you, ${name}! Your inquiry has been sent. We will call you at ${phone} shortly!`);
+      form.reset();
+    });
   });
 
 });

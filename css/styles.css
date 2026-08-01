@@ -355,7 +355,6 @@ img {
   padding-left: 10px;
 }
 
-/* Backdrop Blur overlay for mobile menu */
 .nav-backdrop {
   position: fixed;
   inset: 0;
@@ -370,6 +369,54 @@ img {
 .nav-backdrop.active {
   opacity: 1;
   visibility: visible;
+}
+
+/* ==========================================================================
+   PAGE BANNER (FOR MULTI-PAGE NAVIGATION)
+   ========================================================================== */
+.page-banner {
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 60px;
+  background: linear-gradient(180deg, rgba(11,18,12,0.92) 0%, rgba(6,10,7,0.96) 100%),
+              url('../assets/images/cta-banner-food.png') center/cover no-repeat;
+  border-bottom: 1px solid var(--primary-green-border);
+  text-align: center;
+}
+
+.page-banner-title {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 10px;
+}
+
+.page-banner-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 18px auto;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-green-bright);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--text-white);
 }
 
 /* ==========================================================================
@@ -422,7 +469,6 @@ img {
   flex-wrap: wrap;
 }
 
-/* Hero Badges Horizontal Bar */
 .hero-badges-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -457,7 +503,6 @@ img {
   line-height: 1.2;
 }
 
-/* Hero Image Right Side */
 .hero-visual {
   position: relative;
   display: flex;
@@ -589,25 +634,6 @@ img {
   line-height: 1.5;
 }
 
-/* Side decorative leaves */
-.leaf-deco-left {
-  position: absolute;
-  left: -40px;
-  top: 40%;
-  width: 140px;
-  opacity: 0.15;
-  pointer-events: none;
-}
-
-.leaf-deco-right {
-  position: absolute;
-  right: -40px;
-  top: 15%;
-  width: 140px;
-  opacity: 0.15;
-  pointer-events: none;
-}
-
 /* ==========================================================================
    OUR SERVICES SECTION
    ========================================================================== */
@@ -719,7 +745,6 @@ img {
   margin-top: 50px;
 }
 
-/* Carousel Control Arrows (Visible on mobile/tablet or when sliding) */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -814,6 +839,125 @@ img {
   color: var(--text-muted);
   font-weight: 500;
   margin-top: 4px;
+}
+
+/* ==========================================================================
+   GALLERY PAGE GRID & FILTER TABS
+   ========================================================================== */
+.gallery-section {
+  padding: 80px 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 260px;
+  border: 1px solid var(--border-dark-subtle);
+  transition: var(--transition-normal);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(11, 18, 12, 0.95) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: var(--transition-normal);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text-white);
+}
+
+.gallery-cat {
+  font-size: 0.8rem;
+  color: var(--primary-green-bright);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   CONTACT PAGE SPECIFIC STYLES
+   ========================================================================== */
+.contact-section-wrapper {
+  padding: 80px 0;
+}
+
+.contact-grid-main {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+}
+
+.contact-info-card {
+  background: var(--bg-dark-card);
+  border: 1px solid var(--primary-green-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-direct-call-box {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  color: #FFF;
+  box-shadow: var(--shadow-glow);
+}
+
+.contact-direct-call-box h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.contact-phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  margin-top: 12px;
+  transition: var(--transition-fast);
+}
+
+.contact-phone-btn:hover {
+  background: #FFF;
+  color: var(--primary-green-dark);
 }
 
 /* ==========================================================================
@@ -961,7 +1105,6 @@ img {
   color: var(--text-muted);
 }
 
-/* Scroll To Top Button */
 .back-to-top {
   position: fixed;
   bottom: 24px;
@@ -992,7 +1135,7 @@ img {
 }
 
 /* ==========================================================================
-   POPUP MODALS ("BOOK NOW" / "GET A QUOTE" & "VIEW MENU")
+   POPUP MODALS
    ========================================================================== */
 .modal-wrapper {
   position: fixed;
@@ -1077,7 +1220,6 @@ img {
   color: var(--text-muted);
 }
 
-/* Booking Form */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1124,7 +1266,6 @@ img {
   color: var(--text-white);
 }
 
-/* View Menu Tabs & List */
 .menu-tabs {
   display: flex;
   gap: 10px;
@@ -1186,7 +1327,6 @@ img {
   font-weight: 600;
 }
 
-/* Toast Notifications */
 .toast-notification {
   position: fixed;
   bottom: 30px;
@@ -1211,9 +1351,6 @@ img {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ==========================================================================
-   SCROLL REVEAL ANIMATIONS
-   ========================================================================== */
 .fade-up {
   opacity: 0;
   transform: translateY(35px);
@@ -1234,239 +1371,66 @@ img {
   opacity: 1;
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN (MOBILE & TABLET OPTIMIZATIONS)
-   ========================================================================== */
-
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
-  .hero-title {
-    font-size: 3.2rem;
-  }
-  .why-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
+  .hero-title { font-size: 3.2rem; }
+  .why-grid { grid-template-columns: repeat(3, 1fr); }
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid-main { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
-  /* Header Adjustments */
-  .nav-menu, .social-links-header {
-    display: none;
-  }
+  .nav-menu, .social-links-header { display: none; }
+  .mobile-toggle { display: flex; }
+  .header-actions .btn-primary { display: none; }
   
-  .mobile-toggle {
-    display: flex;
-  }
+  .page-banner { padding-top: 110px; padding-bottom: 40px; }
+  .page-banner-title { font-size: 2.2rem; }
+  
+  .hero { padding-top: 110px; padding-bottom: 50px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+  .hero-content { text-align: left; }
+  .hero-title { font-size: 2.4rem; line-height: 1.2; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .hero-buttons { flex-direction: column; align-items: stretch; gap: 12px; }
+  .hero-buttons .btn-primary, .hero-buttons .btn-secondary { width: 100%; justify-content: center; }
+  .hero-badges-container { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .badge-item { background: var(--bg-dark-card); padding: 12px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border-dark-subtle); }
+  .badge-icon { width: 32px; height: 32px; }
+  .badge-text { font-size: 0.75rem; }
+  
+  .why-choose-us { padding: 60px 0; }
+  .section-heading-dark { font-size: 2rem; }
+  .why-grid { grid-template-columns: 1fr; gap: 14px; }
+  .why-card { flex-direction: row; text-align: left; gap: 16px; padding: 18px 16px; align-items: flex-start; }
+  .why-card-icon { width: 46px; height: 46px; margin-bottom: 0; flex-shrink: 0; }
+  
+  .services-section { padding: 60px 0; }
+  .section-heading-light { font-size: 2rem; }
+  .services-carousel-wrapper { overflow: hidden; padding: 0 10px; }
+  .services-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 16px; padding-bottom: 15px; -webkit-overflow-scrolling: touch; }
+  .services-grid::-webkit-scrollbar { display: none; }
+  .service-card { min-width: 82%; scroll-snap-align: center; flex-shrink: 0; }
+  .carousel-prev, .carousel-next { display: flex; }
+  
+  .stats-section { padding: 40px 0; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .stat-item { background: var(--bg-dark-card); border: 1px solid var(--primary-green-border); border-radius: var(--radius-md); padding: 20px 14px; flex-direction: column; text-align: center; }
+  .stat-item:not(:last-child)::after { display: none; }
+  .stat-number { font-size: 1.8rem; }
+  .stat-label { font-size: 0.78rem; }
+  
+  .gallery-grid { grid-template-columns: 1fr; }
 
-  .header-actions .btn-primary {
-    display: none; /* Accessible in mobile drawer & hero */
-  }
-
-  /* Hero Section Mobile */
-  .hero {
-    padding-top: 110px;
-    padding-bottom: 50px;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .hero-content {
-    text-align: left; /* Left alignment as specified by user */
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-    line-height: 1.2;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-  .hero-buttons .btn-primary,
-  .hero-buttons .btn-secondary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* 2x2 Grid for Hero Badges on Mobile */
-  .hero-badges-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .badge-item {
-    background: var(--bg-dark-card);
-    padding: 12px 10px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border-dark-subtle);
-  }
-
-  .badge-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .badge-text {
-    font-size: 0.75rem;
-  }
-
-  .hero-image-wrapper {
-    max-width: 100%;
-  }
-
-  /* Why Choose Us Section Mobile */
-  .why-choose-us {
-    padding: 60px 0;
-  }
-
-  .section-heading-dark {
-    font-size: 2rem;
-  }
-
-  .why-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .why-card {
-    flex-direction: row;
-    text-align: left;
-    gap: 16px;
-    padding: 18px 16px;
-    align-items: flex-start;
-  }
-
-  .why-card-icon {
-    width: 46px;
-    height: 46px;
-    margin-bottom: 0;
-    flex-shrink: 0;
-  }
-
-  /* Our Services Mobile Carousel Setup */
-  .services-section {
-    padding: 60px 0;
-  }
-
-  .section-heading-light {
-    font-size: 2rem;
-  }
-
-  .services-carousel-wrapper {
-    overflow: hidden;
-    padding: 0 10px;
-  }
-
-  .services-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 16px;
-    padding-bottom: 15px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .services-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .service-card {
-    min-width: 82%;
-    scroll-snap-align: center;
-    flex-shrink: 0;
-  }
-
-  .carousel-prev, .carousel-next {
-    display: flex;
-  }
-
-  /* 2x2 Grid for Stats Counters on Mobile */
-  .stats-section {
-    padding: 40px 0;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-
-  .stat-item {
-    background: var(--bg-dark-card);
-    border: 1px solid var(--primary-green-border);
-    border-radius: var(--radius-md);
-    padding: 20px 14px;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .stat-item:not(:last-child)::after {
-    display: none;
-  }
-
-  .stat-number {
-    font-size: 1.8rem;
-  }
-
-  .stat-label {
-    font-size: 0.78rem;
-  }
-
-  /* CTA Banner Mobile */
-  .cta-banner {
-    padding: 50px 0;
-    text-align: center;
-  }
-
-  .cta-banner-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .cta-title {
-    font-size: 2rem;
-  }
-
-  .cta-action {
-    align-items: center;
-    width: 100%;
-  }
-
-  .cta-action .btn-primary {
-    width: 100%;
-  }
-
-  /* Footer Mobile */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-
-  /* Modals Mobile */
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
+  .cta-banner { padding: 50px 0; text-align: center; }
+  .cta-banner-container { flex-direction: column; align-items: center; gap: 24px; }
+  .cta-title { font-size: 2rem; }
+  .cta-action { align-items: center; width: 100%; }
+  .cta-action .btn-primary { width: 100%; }
+  
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .form-grid { grid-template-columns: 1fr; }
 }

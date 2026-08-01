@@ -17,8 +17,7 @@
        ========================================================================== -->
   <header class="header">
     <div class="container header-container">
-      <!-- Logo -->
-      <a href="#home" class="logo">
+      <a href="index.html" class="logo">
         <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M50 15L15 65H85L50 15Z" fill="url(#mountainGrad)"/>
           <path d="M50 28L32 65H68L50 28Z" fill="#5F9E1E"/>
@@ -36,16 +35,16 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu -->
+      <!-- Navigation Menu -->
       <nav>
         <ul class="nav-menu">
-          <li><a href="#home" class="nav-link active">HOME</a></li>
-          <li><a href="#about" class="nav-link">ABOUT US</a></li>
-          <li><a href="#services" class="nav-link">SERVICES</a></li>
-          <li><a href="#menu" class="nav-link js-open-menu">MENU</a></li>
-          <li><a href="#why-us" class="nav-link">GALLERY</a></li>
-          <li><a href="#stats" class="nav-link">CLIENTS</a></li>
-          <li><a href="#contact" class="nav-link">CONTACT US</a></li>
+          <li><a href="index.html" class="nav-link active">HOME</a></li>
+          <li><a href="about.html" class="nav-link">ABOUT US</a></li>
+          <li><a href="services.html" class="nav-link">SERVICES</a></li>
+          <li><a href="menu.html" class="nav-link">MENU</a></li>
+          <li><a href="gallery.html" class="nav-link">GALLERY</a></li>
+          <li><a href="gallery.html#clients" class="nav-link">CLIENTS</a></li>
+          <li><a href="contact.html" class="nav-link">CONTACT US</a></li>
         </ul>
       </nav>
 
@@ -66,7 +65,6 @@
           <span>GET A QUOTE</span>
         </button>
         
-        <!-- Mobile Toggle Button -->
         <button class="mobile-toggle" aria-label="Toggle Navigation">
           <span></span>
           <span></span>
@@ -84,13 +82,13 @@
         <span style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--primary-green-bright);">Himalaya Caterers</span>
       </div>
       <ul class="mobile-nav-menu">
-        <li><a href="#home" class="mobile-nav-link active">HOME</a></li>
-        <li><a href="#about" class="mobile-nav-link">ABOUT US</a></li>
-        <li><a href="#services" class="mobile-nav-link">SERVICES</a></li>
-        <li><a href="#menu" class="mobile-nav-link js-open-menu">MENU</a></li>
-        <li><a href="#why-us" class="mobile-nav-link">GALLERY</a></li>
-        <li><a href="#stats" class="mobile-nav-link">CLIENTS</a></li>
-        <li><a href="#contact" class="mobile-nav-link">CONTACT US</a></li>
+        <li><a href="index.html" class="mobile-nav-link active">HOME</a></li>
+        <li><a href="about.html" class="mobile-nav-link">ABOUT US</a></li>
+        <li><a href="services.html" class="mobile-nav-link">SERVICES</a></li>
+        <li><a href="menu.html" class="mobile-nav-link">MENU</a></li>
+        <li><a href="gallery.html" class="mobile-nav-link">GALLERY</a></li>
+        <li><a href="gallery.html#clients" class="mobile-nav-link">CLIENTS</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">CONTACT US</a></li>
       </ul>
     </div>
     <div style="display: flex; flex-direction: column; gap: 14px;">
@@ -103,12 +101,9 @@
     </div>
   </div>
 
-  <!-- ==========================================================================
-       HERO SECTION
-       ========================================================================== -->
-  <section id="home" class="hero">
+  <!-- HERO SECTION -->
+  <section class="hero">
     <div class="container hero-grid">
-      <!-- Left Content -->
       <div class="hero-content fade-up">
         <h1 class="hero-title">
           Great Food.<br>
@@ -124,13 +119,12 @@
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             <span>BOOK NOW</span>
           </button>
-          <button class="btn-secondary js-open-menu">
+          <a href="menu.html" class="btn-secondary">
             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
             <span>VIEW MENU</span>
-          </button>
+          </a>
         </div>
 
-        <!-- 4 Badges Row (2x2 on Mobile, Horizontal on Desktop) -->
         <div class="hero-badges-container">
           <div class="badge-item">
             <div class="badge-icon">
@@ -162,7 +156,6 @@
         </div>
       </div>
 
-      <!-- Right Visual Feature -->
       <div class="hero-visual fade-in">
         <div class="hero-image-wrapper">
           <img src="assets/images/hero-dish.png" alt="Himalaya Caterers Culinary Dish Feast" class="hero-main-img">
@@ -171,10 +164,8 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       WHY CHOOSE US SECTION (Light Background)
-       ========================================================================== -->
-  <section id="about" class="why-choose-us">
+  <!-- WHY CHOOSE US SUMMARY -->
+  <section class="why-choose-us">
     <div class="container">
       <div class="section-title-center fade-up">
         <span class="section-tag">➔ WHY CHOOSE US ➔</span>
@@ -185,7 +176,6 @@
       </div>
 
       <div class="why-grid fade-up">
-        <!-- Card 1 -->
         <div class="why-card">
           <div class="why-card-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
@@ -196,7 +186,6 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="why-card">
           <div class="why-card-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/></svg>
@@ -207,7 +196,6 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="why-card">
           <div class="why-card-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
@@ -218,7 +206,6 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
         <div class="why-card">
           <div class="why-card-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
@@ -229,7 +216,6 @@
           </div>
         </div>
 
-        <!-- Card 5 -->
         <div class="why-card">
           <div class="why-card-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -240,13 +226,17 @@
           </div>
         </div>
       </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="about.html" class="btn-primary">
+          <span>READ MORE ABOUT US &gt;</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       OUR SERVICES SECTION
-       ========================================================================== -->
-  <section id="services" class="services-section">
+  <!-- SERVICES SECTION SUMMARY -->
+  <section class="services-section">
     <div class="container">
       <div class="section-title-center fade-up">
         <span class="section-tag">➔ OUR SERVICES ➔</span>
@@ -254,7 +244,6 @@
       </div>
 
       <div class="services-carousel-wrapper fade-up">
-        <!-- Carousel Nav Buttons -->
         <button class="carousel-btn carousel-prev" aria-label="Previous Service">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
         </button>
@@ -263,7 +252,6 @@
         </button>
 
         <div class="services-grid">
-          <!-- Service 1 -->
           <div class="service-card">
             <div class="service-img-container">
               <img src="assets/images/wedding-catering.png" alt="Weddings Catering">
@@ -277,7 +265,6 @@
             </div>
           </div>
 
-          <!-- Service 2 -->
           <div class="service-card">
             <div class="service-img-container">
               <img src="assets/images/corporate-catering.png" alt="Corporate Events">
@@ -291,7 +278,6 @@
             </div>
           </div>
 
-          <!-- Service 3 -->
           <div class="service-card">
             <div class="service-img-container">
               <img src="assets/images/private-party-catering.png" alt="Private Parties">
@@ -305,7 +291,6 @@
             </div>
           </div>
 
-          <!-- Service 4 -->
           <div class="service-card">
             <div class="service-img-container">
               <img src="assets/images/social-gatherings-catering.png" alt="Social Gatherings">
@@ -319,7 +304,6 @@
             </div>
           </div>
 
-          <!-- Service 5 -->
           <div class="service-card">
             <div class="service-img-container">
               <img src="assets/images/custom-orders.png" alt="Custom Orders">
@@ -336,20 +320,17 @@
       </div>
 
       <div class="services-cta-wrapper fade-up">
-        <button class="btn-primary js-open-quote">
+        <a href="services.html" class="btn-primary">
           <span>VIEW ALL SERVICES &gt;</span>
-        </button>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       ANIMATED STATS / COUNTERS SECTION
-       ========================================================================== -->
-  <section id="stats" class="stats-section">
+  <!-- ANIMATED STATS SECTION -->
+  <section class="stats-section">
     <div class="container">
       <div class="stats-grid">
-        <!-- Stat 1 -->
         <div class="stat-item fade-up">
           <div class="stat-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
@@ -360,7 +341,6 @@
           </div>
         </div>
 
-        <!-- Stat 2 -->
         <div class="stat-item fade-up">
           <div class="stat-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
@@ -371,7 +351,6 @@
           </div>
         </div>
 
-        <!-- Stat 3 -->
         <div class="stat-item fade-up">
           <div class="stat-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
@@ -382,7 +361,6 @@
           </div>
         </div>
 
-        <!-- Stat 4 -->
         <div class="stat-item fade-up">
           <div class="stat-icon">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
@@ -396,10 +374,8 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       CTA BANNER (Let's Make Your Event Memorable)
-       ========================================================================== -->
-  <section id="contact" class="cta-banner">
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
     <div class="container cta-banner-container">
       <div class="cta-content fade-up">
         <h2 class="cta-title">Let's Make Your Event <span class="highlight">Memorable</span></h2>
@@ -407,7 +383,6 @@
       </div>
 
       <div class="cta-action fade-up">
-        <!-- Direct call link to 9666552435 as requested by user -->
         <a href="tel:9666552435" class="btn-primary">
           <span>CONTACT US TODAY &gt;</span>
         </a>
@@ -419,15 +394,12 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <!-- Brand Info -->
         <div class="footer-brand">
-          <a href="#home" class="logo">
+          <a href="index.html" class="logo">
             <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M50 15L15 65H85L50 15Z" fill="#72BE24"/>
               <path d="M50 28L32 65H68L50 28Z" fill="#5F9E1E"/>
@@ -453,32 +425,29 @@
           </div>
         </div>
 
-        <!-- Quick Links -->
         <div>
           <h4 class="footer-col-title">QUICK LINKS</h4>
           <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#menu" class="js-open-menu">Menu</a></li>
-            <li><a href="#why-us">Gallery</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
 
-        <!-- Our Services -->
         <div>
           <h4 class="footer-col-title">OUR SERVICES</h4>
           <ul class="footer-links">
-            <li><a href="#services">Weddings</a></li>
-            <li><a href="#services">Corporate Events</a></li>
-            <li><a href="#services">Private Parties</a></li>
-            <li><a href="#services">Social Gatherings</a></li>
-            <li><a href="#services">Custom Orders</a></li>
+            <li><a href="services.html">Weddings</a></li>
+            <li><a href="services.html">Corporate Events</a></li>
+            <li><a href="services.html">Private Parties</a></li>
+            <li><a href="services.html">Social Gatherings</a></li>
+            <li><a href="services.html">Custom Orders</a></li>
           </ul>
         </div>
 
-        <!-- Contact Us -->
         <div>
           <h4 class="footer-col-title">CONTACT US</h4>
           <ul class="footer-contact-list">
@@ -509,14 +478,11 @@
     </div>
   </footer>
 
-  <!-- Scroll to Top Button -->
   <button class="back-to-top" aria-label="Back to Top">
     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
   </button>
 
-  <!-- ==========================================================================
-       MODAL 1: GET A QUOTE / BOOK NOW
-       ========================================================================== -->
+  <!-- GET A QUOTE MODAL -->
   <div id="quoteModal" class="modal-wrapper">
     <div class="modal-backdrop"></div>
     <div class="modal-card">
@@ -573,126 +539,10 @@
     </div>
   </div>
 
-  <!-- ==========================================================================
-       MODAL 2: VIEW MENU
-       ========================================================================== -->
-  <div id="menuModal" class="modal-wrapper">
-    <div class="modal-backdrop"></div>
-    <div class="modal-card">
-      <button class="modal-close" aria-label="Close Modal">✕</button>
-
-      <div class="modal-header">
-        <h3 class="modal-title">Himalaya Caterers Menu</h3>
-        <p class="modal-subtitle">Explore our exquisite authentic dishes cooked by master chefs.</p>
-      </div>
-
-      <div class="menu-tabs">
-        <button class="menu-tab-btn active" data-tab="tabStarters">Starters</button>
-        <button class="menu-tab-btn" data-tab="tabMainCourse">Main Course</button>
-        <button class="menu-tab-btn" data-tab="tabBiryani">Biryani & Rice</button>
-        <button class="menu-tab-btn" data-tab="tabDesserts">Desserts</button>
-      </div>
-
-      <!-- Starters -->
-      <div id="tabStarters" class="menu-category-content active">
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Paneer Tikka & Hara Bhara Kabab</div>
-            <div class="menu-item-desc">Marinated cottage cheese char-grilled with fresh herbs.</div>
-          </div>
-          <span class="menu-item-tag">Chef Special</span>
-        </div>
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Chicken 65 & Tandoori Wings</div>
-            <div class="menu-item-desc">Spicy marinated chicken pieces deep fried to crisp perfection.</div>
-          </div>
-          <span class="menu-item-tag">Popular</span>
-        </div>
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Crispy Vegetable Spring Rolls</div>
-            <div class="menu-item-desc">Stuffed with crunchy seasonal veggies and sweet chili dip.</div>
-          </div>
-          <span class="menu-item-tag">Veg</span>
-        </div>
-      </div>
-
-      <!-- Main Course -->
-      <div id="tabMainCourse" class="menu-category-content">
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Dal Makhani & Butter Paneer</div>
-            <div class="menu-item-desc">Slow-cooked creamy black lentils & rich cottage cheese curry.</div>
-          </div>
-          <span class="menu-item-tag">Veg Deluxe</span>
-        </div>
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Hyderabadi Mutton Curry</div>
-            <div class="menu-item-desc">Tender mutton pieces simmered in rich spiced gravy.</div>
-          </div>
-          <span class="menu-item-tag">Non-Veg</span>
-        </div>
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Assorted Tandoori Roti & Naan</div>
-            <div class="menu-item-desc">Butter Naan, Garlic Naan, Missi Roti & Laccha Paratha.</div>
-          </div>
-          <span class="menu-item-tag">Bread Basket</span>
-        </div>
-      </div>
-
-      <!-- Biryani -->
-      <div id="tabBiryani" class="menu-category-content">
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Special Dum Biryani (Chicken / Mutton)</div>
-            <div class="menu-item-desc">Aromatic long grain basmati rice cooked on dum with tender meat & spices.</div>
-          </div>
-          <span class="menu-item-tag">Bestseller</span>
-        </div>
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Hyderabadi Veg Dum Biryani</div>
-            <div class="menu-item-desc">Flavored basmati rice with veggies, saffron, and fresh herbs.</div>
-          </div>
-          <span class="menu-item-tag">Veg</span>
-        </div>
-      </div>
-
-      <!-- Desserts -->
-      <div id="tabDesserts" class="menu-category-content">
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Hot Gulab Jamun & Shahi Tukda</div>
-            <div class="menu-item-desc">Traditional sweet desserts soaked in saffron sugar syrup.</div>
-          </div>
-          <span class="menu-item-tag">Sweet</span>
-        </div>
-        <div class="menu-item-row">
-          <div>
-            <div class="menu-item-name">Kesari Rasmalai & Ice Creams</div>
-            <div class="menu-item-desc">Soft cottage cheese dumplings in rich saffron milk.</div>
-          </div>
-          <span class="menu-item-tag">Delight</span>
-        </div>
-      </div>
-
-      <div style="margin-top: 24px; text-align: center;">
-        <button class="btn-primary js-open-quote" style="width: 100%;">
-          <span>REQUEST CUSTOM MENU QUOTE</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification Container -->
   <div id="toastNotification" class="toast-notification">
     <span class="toast-msg">Notification Message</span>
   </div>
 
-  <!-- JavaScript File -->
   <script src="js/main.js"></script>
 </body>
 </html>
