@@ -360,7 +360,7 @@ img {
   position: relative;
   padding-top: 150px;
   padding-bottom: 60px;
-  background: linear-gradient(180deg, rgba(11,18,12,0.92) 0%, rgba(6,10,7,0.96) 100%),
+  background: linear-gradient(180deg, rgba(11,18,12,0.45) 0%, rgba(6,10,7,0.60) 100%),
               url('../assets/images/cta-banner-food.png') center/cover no-repeat;
   border-bottom: 1px solid var(--primary-green-border);
   text-align: center;
@@ -1487,11 +1487,11 @@ img {
   .page-banner { padding-top: 110px; padding-bottom: 40px; }
   .page-banner-title { font-size: 2.2rem; }
   
-  /* HERO ANIMATED BACKGROUND MOBILE (image copy 4.png & 5.png) */
+  /* HERO ANIMATED BACKGROUND MOBILE (image copy 4.png, 5.png & 9.png) */
   .hero {
     padding-top: 110px;
     padding-bottom: 50px;
-    background: linear-gradient(180deg, rgba(6, 10, 7, 0.88) 0%, rgba(11, 18, 12, 0.94) 100%),
+    background: linear-gradient(180deg, rgba(6, 10, 7, 0.38) 0%, rgba(11, 18, 12, 0.52) 100%),
                 url('../assets/images/hero-mobile-bg.png') center/cover no-repeat !important;
     animation: heroBgMobileZoom 16s ease-in-out infinite alternate;
   }
@@ -1590,4 +1590,138 @@ img {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   .form-grid { grid-template-columns: 1fr; }
+
+  /* FLOATING CONTACT BUTTONS MOBILE RESPONSIVE (image copy 8.png) */
+  .floating-contact-buttons {
+    bottom: 16px;
+    right: 14px;
+    gap: 10px;
+  }
+
+  .float-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .float-btn-tooltip {
+    display: none;
+  }
 }
+
+/* ==========================================================================
+   FLOATING INBUILT WHATSAPP & CALL WIDGET (image copy 8.png)
+   ========================================================================== */
+.floating-contact-buttons {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.float-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.float-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+}
+
+.float-btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.float-btn-whatsapp::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: pulseWa 2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes pulseWa {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+.float-btn-call {
+  background: linear-gradient(135deg, var(--primary-green-bright) 0%, var(--primary-green-dark) 100%);
+}
+
+.float-btn-tooltip {
+  position: absolute;
+  right: 64px;
+  background: var(--bg-dark-card);
+  color: var(--text-white);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border: 1px solid var(--primary-green-border);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateX(10px);
+}
+
+.float-btn:hover .float-btn-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* WhatsApp Button Utility */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+  transition: var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #20BA5A 0%, #0E7065 100%);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  transform: translateY(-2px);
+  color: #FFFFFF !important;
+}
+
+/* Enhancing Text Shadows for Background Visibility */
+.hero-title, .page-banner-title {
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle, .page-banner-subtitle {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
