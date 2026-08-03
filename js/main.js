@@ -244,7 +244,79 @@ document.addEventListener('DOMContentLoaded', () => {
       closeModal(quoteModal);
       showToast(`🎉 Thank you, ${name}! Your inquiry has been sent. We will call you at ${phone} shortly!`);
       form.reset();
+  /* ------------------------------------------------------------------------
+     8. Gallery Filter Tabs & Video Lightbox Modal
+     ------------------------------------------------------------------------ */
+  const galleryTabBtns = document.querySelectorAll('.gallery-tab-btn');
+  const galleryItems = document.querySelectorAll('#galleryGrid .gallery-item');
+
+  galleryTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      galleryTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          item.style.display = 'flex';
+          item.style.opacity = '1';
+        } else {
+          item.style.display = 'none';
+          item.style.opacity = '0';
+        }
+      });
     });
   });
 
+  /* Video Lightbox Modal Interactivity */
+  const videoModal = document.getElementById('videoModal');
+  const videoPlayerIframe = document.getElementById('videoPlayerIframe');
+  const videoModalTitle = document.getElementById('videoModalTitle');
+  const videoCloseBtn = document.querySelector('.video-modal-close');
+  const videoOverlayTriggers = document.querySelectorAll('.video-play-overlay');
+
+  function openVideoModal(videoId, title) {
+    if (!videoModal || !videoPlayerIframe) return;
+    videoPlayerIframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
+    if (videoModalTitle) videoModalTitle.textContent = title || 'Himalaya Caterers Event Video';
+    videoModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideoModal() {
+    if (!videoModal || !videoPlayerIframe) return;
+    videoModal.classList.remove('active');
+    videoPlayerIframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  videoOverlayTriggers.forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const videoBox = overlay.closest('.video-box');
+      const videoId = videoBox?.getAttribute('data-video-id');
+      const title = videoBox?.querySelector('.gallery-title')?.textContent;
+      if (videoId) {
+        openVideoModal(videoId, title);
+      }
+    });
+  });
+
+  videoCloseBtn?.addEventListener('click', closeVideoModal);
+
+  videoModal?.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-backdrop')) {
+      closeVideoModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal?.classList.contains('active')) {
+      closeVideoModal();
+    }
+  });
+
 });
+
