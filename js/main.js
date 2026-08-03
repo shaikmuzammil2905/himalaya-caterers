@@ -277,12 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoModal = document.getElementById('videoModal');
   const videoPlayerIframe = document.getElementById('videoPlayerIframe');
   const videoModalTitle = document.getElementById('videoModalTitle');
+  const videoDirectDriveBtn = document.getElementById('videoDirectDriveBtn');
   const videoCloseBtn = document.querySelector('.video-modal-close');
   const videoOverlayTriggers = document.querySelectorAll('.video-play-overlay');
 
   function openVideoModal(videoId, title) {
     if (!videoModal || !videoPlayerIframe) return;
     videoPlayerIframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
+    if (videoDirectDriveBtn) {
+      videoDirectDriveBtn.href = `https://drive.google.com/file/d/${videoId}/view?usp=drivesdk`;
+    }
     if (videoModalTitle) videoModalTitle.textContent = title || 'Himalaya Caterers Event Video';
     videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -319,6 +323,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape' && videoModal?.classList.contains('active')) {
       closeVideoModal();
     }
+  });
+
+  /* ------------------------------------------------------------------------
+     9. Location Tabs Switching (Hyderabad & Karnataka)
+     ------------------------------------------------------------------------ */
+  const locationTabBtns = document.querySelectorAll('.location-tab-btn');
+  const locationBoxes = document.querySelectorAll('.location-content-box');
+
+  locationTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const locTarget = btn.getAttribute('data-loc');
+      const parentSection = btn.closest('.contact-map-section');
+      if (!parentSection) return;
+
+      const sectionBtns = parentSection.querySelectorAll('.location-tab-btn');
+      const sectionBoxes = parentSection.querySelectorAll('.location-content-box');
+
+      sectionBtns.forEach(b => b.classList.remove('active'));
+      sectionBoxes.forEach(box => box.classList.remove('active'));
+
+      btn.classList.add('active');
+      parentSection.querySelector(`#loc-${locTarget}`)?.classList.add('active');
+    });
   });
 
 });
