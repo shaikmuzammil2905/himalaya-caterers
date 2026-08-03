@@ -275,27 +275,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Video Lightbox Modal Interactivity */
   const videoModal = document.getElementById('videoModal');
+  const videoPlayerLocalModal = document.getElementById('videoPlayerLocalModal');
   const videoPlayerIframe = document.getElementById('videoPlayerIframe');
   const videoModalTitle = document.getElementById('videoModalTitle');
-  const videoDirectDriveBtn = document.getElementById('videoDirectDriveBtn');
   const videoCloseBtn = document.querySelector('.video-modal-close');
   const videoOverlayTriggers = document.querySelectorAll('.video-play-overlay');
 
-  function openVideoModal(videoId, title) {
-    if (!videoModal || !videoPlayerIframe) return;
-    videoPlayerIframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
-    if (videoDirectDriveBtn) {
-      videoDirectDriveBtn.href = `https://drive.google.com/file/d/${videoId}/view?usp=drivesdk`;
+  function openVideoModal(videoSrc, videoId, title) {
+    if (!videoModal) return;
+
+    if (videoSrc) {
+      if (videoPlayerLocalModal) {
+        videoPlayerLocalModal.src = videoSrc;
+        videoPlayerLocalModal.style.display = 'block';
+        videoPlayerLocalModal.play().catch(e => console.log('Autoplay handled:', e));
+      }
+      if (videoPlayerIframe) videoPlayerIframe.style.display = 'none';
+    } else if (videoId) {
+      if (videoPlayerIframe) {
+        videoPlayerIframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
+        videoPlayerIframe.style.display = 'block';
+      }
+      if (videoPlayerLocalModal) videoPlayerLocalModal.style.display = 'none';
     }
+
     if (videoModalTitle) videoModalTitle.textContent = title || 'Himalaya Caterers Event Video';
     videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeVideoModal() {
-    if (!videoModal || !videoPlayerIframe) return;
+    if (!videoModal) return;
     videoModal.classList.remove('active');
-    videoPlayerIframe.src = '';
+    if (videoPlayerLocalModal) {
+      videoPlayerLocalModal.pause();
+      videoPlayerLocalModal.src = '';
+    }
+    if (videoPlayerIframe) {
+      videoPlayerIframe.src = '';
+    }
     document.body.style.overflow = '';
   }
 
@@ -303,11 +321,10 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', (e) => {
       e.stopPropagation();
       const videoBox = overlay.closest('.video-box');
+      const videoSrc = videoBox?.getAttribute('data-video-src');
       const videoId = videoBox?.getAttribute('data-video-id');
       const title = videoBox?.querySelector('.gallery-title')?.textContent;
-      if (videoId) {
-        openVideoModal(videoId, title);
-      }
+      openVideoModal(videoSrc, videoId, title);
     });
   });
 
