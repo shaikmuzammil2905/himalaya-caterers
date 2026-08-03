@@ -244,6 +244,9 @@ document.addEventListener('DOMContentLoaded', () => {
       closeModal(quoteModal);
       showToast(`🎉 Thank you, ${name}! Your inquiry has been sent. We will call you at ${phone} shortly!`);
       form.reset();
+    });
+  });
+
   /* ------------------------------------------------------------------------
      8. Gallery Filter Tabs & Video Lightbox Modal
      ------------------------------------------------------------------------ */
